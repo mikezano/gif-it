@@ -20,7 +20,7 @@ export class ApiService {
     }
 
     public get<T>(url: string, done: (response) => T): Promise<T> {
-        debugger;
+
         return this.http.fetch(url)
             .then(response => response.json())
             .then(response => { return done(response); });

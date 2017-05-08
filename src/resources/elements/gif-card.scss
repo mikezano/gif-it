@@ -6,12 +6,18 @@
     display:flex;
     justify-content:center;
     align-items: center;
+
+    &:hover{
+        .gif-card__gif{
+            transform:scale(1.1);
+        }
+    }
     &__gif{
         $color:hsla(0, 0%, 27%, 1);
         border:1px solid lighten($color, 10%);
         background-color:$color;
         padding:10px;
-        max-width:290px;
-        max-height:290px;
+        max-width:280px;
+        max-height:280px;
     }
 }
