@@ -213,6 +213,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+define('resources/elements/gif-card',["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var GifCard = (function () {
+        function GifCard() {
+        }
+        GifCard.prototype.attached = function () {
+        };
+        GifCard.prototype.srcChanged = function (o, n) {
+        };
+        return GifCard;
+    }());
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], GifCard.prototype, "src", void 0);
+    GifCard = __decorate([
+        aurelia_framework_1.autoinject()
+    ], GifCard);
+    exports.GifCard = GifCard;
+});
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9lbGVtZW50cy9naWYtY2FyZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7SUFHQSxJQUFhLE9BQU87UUFBcEI7UUFXQSxDQUFDO1FBUFEsMEJBQVEsR0FBZjtRQUVBLENBQUM7UUFFTSw0QkFBVSxHQUFqQixVQUFrQixDQUFDLEVBQUUsQ0FBQztRQUV0QixDQUFDO1FBQ0gsY0FBQztJQUFELENBWEEsQUFXQyxJQUFBO0lBVEM7UUFEQyw0QkFBUTs7d0NBQ1M7SUFGUCxPQUFPO1FBRG5CLDhCQUFVLEVBQUU7T0FDQSxPQUFPLENBV25CO0lBWFksMEJBQU8iLCJmaWxlIjoicmVzb3VyY2VzL2VsZW1lbnRzL2dpZi1jYXJkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtiaW5kYWJsZSwgYXV0b2luamVjdH0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5AYXV0b2luamVjdCgpXG5leHBvcnQgY2xhc3MgR2lmQ2FyZCB7XG4gIEBiaW5kYWJsZVxuICBwdWJsaWMgc3JjOnN0cmluZztcblxuICBwdWJsaWMgYXR0YWNoZWQoKXtcblxuICB9XG5cbiAgcHVibGljIHNyY0NoYW5nZWQobywgbil7XG5cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiJzcmMifQ==
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 define('resources/elements/nav-bar',["require", "exports", "aurelia-framework", "aurelia-router"], function (require, exports, aurelia_framework_1, aurelia_router_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -234,11 +267,14 @@ define('resources/elements/nav-bar',["require", "exports", "aurelia-framework", 
 
 //# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9lbGVtZW50cy9uYXYtYmFyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztJQUlBLElBQWEsTUFBTTtRQUFuQjtRQUlBLENBQUM7UUFEUSx5QkFBUSxHQUFmLGNBQWtCLENBQUM7UUFDckIsYUFBQztJQUFELENBSkEsQUFJQyxJQUFBO0lBRkM7UUFEQyw0QkFBUTtrQ0FDSyx1QkFBTTswQ0FBQztJQUZWLE1BQU07UUFEbEIsOEJBQVUsRUFBRTtPQUNBLE1BQU0sQ0FJbEI7SUFKWSx3QkFBTSIsImZpbGUiOiJyZXNvdXJjZXMvZWxlbWVudHMvbmF2LWJhci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7YmluZGFibGUsIGF1dG9pbmplY3R9IGZyb20gJ2F1cmVsaWEtZnJhbWV3b3JrJztcclxuaW1wb3J0IHtSb3V0ZXJ9IGZyb20gJ2F1cmVsaWEtcm91dGVyJztcclxuXHJcbkBhdXRvaW5qZWN0KClcclxuZXhwb3J0IGNsYXNzIE5hdkJhciB7XHJcbiAgQGJpbmRhYmxlXHJcbiAgcHVibGljIHJvdXRlcjpSb3V0ZXI7XHJcbiAgcHVibGljIGF0dGFjaGVkKCl7fVxyXG59XHJcbiJdLCJzb3VyY2VSb290Ijoic3JjIn0=
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"./app.css\"></require><require from=\"./resources/elements/nav-bar\"></require><nav-bar router.bind=\"router\"></nav-bar><img src=\"http://localhost:8000/success4.gif\"/><router-view></router-view></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><require from=\"./app.css\"></require><require from=\"./resources/elements/nav-bar\"></require><nav-bar router.bind=\"router\"></nav-bar><router-view></router-view></template>"; });
 define('text!app.css', ['module'], function(module) { module.exports = "body {\n  background: -webkit-linear-gradient(#303030, #444444 45%, #444444 55%, #303030);\n  background: -o-linear-gradient(#303030, #444444 45%, #444444 55%, #303030);\n  background: linear-gradient(#303030, #444444 45%, #444444 55%, #303030);\n  background-repeat: no-repeat;\n  background-attachment: fixed;\n  font-family: 'Orbitron', sans-serif; }\n\n.au-enter {\n  opacity: 0; }\n\n.au-enter-active {\n  animation: fade-in .5s linear; }\n\n@keyframes fade-in {\n  0% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n.header {\n  color: orange;\n  text-align: center; }\n"; });
-define('text!indexes/gifs.html', ['module'], function(module) { module.exports = "<template><div>Gifs</div></template>"; });
+define('text!indexes/gifs.html', ['module'], function(module) { module.exports = "<template><require from=\"../resources/elements/gif-card\"></require><require from=\"./gifs.css\"></require><div class=\"gifs\"><gif-card src.bind=\"'http://localhost:8000/success1.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success2.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success3.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success4.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success5.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success6.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success7.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success8.gif'\"></gif-card><gif-card src.bind=\"'http://localhost:8000/success9.gif'\"></gif-card></div></template>"; });
 define('text!indexes/home.css', ['module'], function(module) { module.exports = "section.home {\n  text-align: center; }\n  section.home .push-button {\n    font-size: 30px;\n    padding: 10px;\n    margin-top: 60px;\n    position: relative;\n    color: #FFF;\n    text-decoration: none;\n    border-radius: 5px;\n    border: solid 1px #525252;\n    background: #383838;\n    text-align: center;\n    -webkit-transition: all 0.1s;\n    -moz-transition: all 0.1s;\n    transition: all 0.1s;\n    -webkit-box-shadow: 0px 9px 0px #1f1f1f;\n    -moz-box-shadow: 0px 9px 0px #1f1f1f;\n    box-shadow: 0px 9px 0px #1f1f1f;\n    outline: none; }\n  section.home .push-button:active {\n    -webkit-box-shadow: 0px 2px 0px #1a1a1a;\n    -moz-box-shadow: 0px 2px 0px #1a1a1a;\n    box-shadow: 0px 2px 0px #1a1a1a;\n    position: relative;\n    top: 7px; }\n  section.home h1 {\n    color: white;\n    font-weight: bold;\n    font-size: 48px;\n    padding-top: 50px;\n    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }\n  section.home .gif-player {\n    position: absolute;\n    top: 150px;\n    left: 50%;\n    margin-left: -200px; }\n    section.home .gif-player .current-channel, section.home .gif-player .tv {\n      position: absolute;\n      top: 0; }\n    section.home .gif-player .current-channel {\n      display: flex;\n      align-items: center;\n      top: 170px;\n      left: 30px; }\n      section.home .gif-player .current-channel img {\n        height: 280px;\n        width: 280px;\n        top: 200px; }\n"; });
 define('text!indexes/home.html', ['module'], function(module) { module.exports = "<template><require from=\"./home.css\"></require><!--require(from=\"../components/modals/gifEmbedDialog.css\")--><section class=\"home au-animate\"><div class=\"gif-player\"><div class=\"current-channel\"><img if.bind=\"gif\" src.bind=\"gif\"/></div><img class=\"tv\" src=\"http://prashantsani.com/Misc/codepen/tv.svg\" alt=\"\"/></div><button class=\"push-button\" click.trigger=\"openDialog()\">Embed Gifs Into Your Site</button></section><script>(function(){\n\tfunction httpGetAsync(theUrl, callback) {\n\t\tvar xmlHttp = new XMLHttpRequest();\n\t\txmlHttp.onreadystatechange = function () {\n\t\t\tif (xmlHttp.readyState == 4 && xmlHttp.status == 200)\n\t\t\t\tcallback(xmlHttp.responseText);\n\t\t}\n\t\txmlHttp.open(\"GET\", theUrl, true); // true for asynchronous\n\t\txmlHttp.send(null);\n\t}\n\n\tfunction whatToDo(result) {\n\t\tdocument.getElementById(\"random-gif\").src = result;\n\t}\n\n\talert('hi');\n\tconsole.log(\"Hello\");\n)}();\nconsole.log(\"why\");\n\n</script><!--img#random-gif(onload='httpGetAsync(\"http://localhost:5000/api/Gif/GetRandomGif\", whatToDo)')--></template><!--http://stackoverflow.com/questions/36517735/script-tag-in-aurelia-view-is-not-executed-->"; });
-define('text!resources/elements/nav-bar.css', ['module'], function(module) { module.exports = ".nav-bar {\n  display: flex;\n  flex-direction: row-reverse; }\n  .nav-bar a {\n    color: white; }\n"; });
-define('text!resources/elements/nav-bar.html', ['module'], function(module) { module.exports = "<template><require from=\"./nav-bar.css\"></require><div class=\"nav-bar\"><a repeat.for=\"route of router.navigation\" href.bind=\"route.href\">${route.title}</a></div></template>"; });
+define('text!resources/elements/gif-card.css', ['module'], function(module) { module.exports = ".gif-card {\n  width: 300px;\n  height: 300px;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  .gif-card__gif {\n    border: 1px solid #5e5e5e;\n    background-color: #454545;\n    padding: 10px;\n    max-width: 290px;\n    max-height: 290px; }\n"; });
+define('text!resources/elements/gif-card.html', ['module'], function(module) { module.exports = "<template><require from=\"./gif-card.css\"></require><div class=\"gif-card\"><img class=\"gif-card__gif\" src.bind=\"src\"/></div></template>"; });
+define('text!resources/elements/nav-bar.css', ['module'], function(module) { module.exports = ".nav-bar {\n  flex-direction: row-reverse;\n  display: flex;\n  align-items: flex-start; }\n  .nav-bar a {\n    color: white; }\n  .nav-bar__logo {\n    align-self: flex-start;\n    color: yellow;\n    margin-right: auto;\n    order: 1;\n    margin: 4px auto 4px 0; }\n  .nav-bar__item {\n    color: white;\n    margin: 4px 8px;\n    transition: color .2s ease-in; }\n    .nav-bar__item:hover {\n      color: #999999; }\n"; });
+define('text!resources/elements/nav-bar.html', ['module'], function(module) { module.exports = "<template><require from=\"./nav-bar.css\"></require><div class=\"nav-bar\"><div class=\"nav-bar__logo\">Logo</div><a class=\"nav-bar__item\" repeat.for=\"route of router.navigation\" href.bind=\"route.href\">${route.title}</a></div></template>"; });
+define('text!indexes/gifs.css', ['module'], function(module) { module.exports = ".gifs {\n  display: flex;\n  flex-wrap: wrap; }\n"; });
 //# sourceMappingURL=app-bundle.js.map

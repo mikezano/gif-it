@@ -12,17 +12,17 @@ const port = 8000;
 app.use(express.static('./src/resources/gifs'));
 app.use(bodyParser.urlencoded({extended:true}));
 
-MongoClient.connect(db.url, (err, database) =>{
-	if(err) return console.log(err);
-	require('./app/routes')(app, database);
+// MongoClient.connect(db.url, (err, database) =>{
+// 	if(err) return console.log(err);
+// 	require('./app/routes')(app, database);
 
-	app.listen(port, ()=>{
-		console.log("Live on port: " + port);
-	});
-});
+// 	app.listen(port, ()=>{
+// 		console.log("Live on port: " + port);
+// 	});
+// });
 
-// require('./app/routes')(app, {extended: true});
+require('./app/routes')(app, {extended: true});
 
-// app.listen(port, ()=>{
-// 	console.log("Live on port: " + port);
-// })
+app.listen(port, ()=>{
+	console.log("Live on port: " + port);
+})

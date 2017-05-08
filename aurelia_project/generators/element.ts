@@ -40,7 +40,6 @@ export class ${className} {
 
   generatePugSource(className) {
 return `template
-  require(from="./${className}")
     .${this.dasherize(className)}
 `
   }

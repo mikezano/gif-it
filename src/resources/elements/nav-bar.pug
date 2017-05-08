@@ -1,4 +1,7 @@
 template
   require(from="./nav-bar.css")
   .nav-bar
-    a(repeat.for="route of router.navigation" href.bind="route.href") ${route.title}
+    .nav-bar__logo Logo
+    a.nav-bar__item(repeat.for="route of router.navigation" href.bind="route.href")
+      | ${route.title}
+    
