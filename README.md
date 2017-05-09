@@ -15,5 +15,5 @@ Links That Solved Issues
 
 * [Getting aurelia-dialog to work](http://stackoverflow.com/questions/38762135/aurelia-dialog-error-with-the-release-version-and-cli)
 
-How to use Aurelia's Dialog
-* (http://aurelia.io/hub.html#/doc/article/aurelia/dialog/latest/dialog-basics/)
+* [How to use Aurelia's Dialog]
+(http://aurelia.io/hub.html#/doc/article/aurelia/dialog/latest/dialog-basics/)
