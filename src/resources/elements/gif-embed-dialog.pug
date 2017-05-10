@@ -36,10 +36,19 @@ template
 					span px
 					ux-dialog-footer
 						p footer
+			p 2. Select Category
+			select(value.bind="category")
+				option(value="All") All
+				option(value="Success") Success
+				option(value="Fail") Fail
+				option(value="Loading") Loading						
 			p 3. Add this markup where gifs will appear
 			pre ${fullEmbedCode}
 			p 4. Add this to your code to trigger gifs
 			pre ${triggerGifCode()}
+		ux-dialog-footer
+			button(click.trigger="controller.cancel()") Cancel
+			button#copy-embed-code OK
 	//ai-dialog#gif-embed
 
 		h1 Embed Options

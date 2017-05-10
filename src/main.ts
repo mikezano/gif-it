@@ -13,7 +13,7 @@ export function configure(aurelia: Aurelia) {
         //TODO: need to add fading in
         config.settings.position = (d:HTMLElement,c) => {
             console.log(d);
-            d.style.top = "100px";
+            d.style.top = "50px";
             console.log(c);
         };
     })    
