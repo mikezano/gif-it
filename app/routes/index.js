@@ -3,5 +3,5 @@ const uploads = require('./uploads');
 
 module.exports = (app, db)=>{
 	noteRoutes(app, db);
-	uploads(app);
+	uploads(app, db);
 }

@@ -29,6 +29,7 @@ module.exports = (app, db)=>{
 
 	app.post('/notes', (req, res) => {
 		const note = {text: req.body.body, title: req.body.title};
+		res.send("hello");
 		db.collection('notes').insert(note, (err, result) =>{
 			if(err)
 				res.send({'error': 'An error has ocurred'});
