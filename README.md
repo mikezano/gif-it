@@ -2,6 +2,11 @@
 Gif files for those special moments :)
 "# gif-it" 
 
+To Run
+======
+* npm run dev (start up server)
+* au run --watch (start up front end)
+
 Tech Involved
 =============
 
@@ -17,3 +22,5 @@ Links That Solved Issues
 
 * [How to use Aurelia's Dialog]
 (http://aurelia.io/hub.html#/doc/article/aurelia/dialog/latest/dialog-basics/)
+
+* Use the Chrome extension of Postman vs the client desktop version

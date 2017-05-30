@@ -11,20 +11,22 @@ module.exports = (app, db) =>{
 
 		var item = {};
 		item._id = 123;
-		console.log(req);
+		//console.log(req);
 		var file = req.files.gif;
 		item.bin = Binary(file);
 
-		console.log(file);
+		//console.log(file);
 		// const id = req.params.id;
 		// const details = { '_id': new ObjectID(id)};
 		db.collection('uploads').insert(item, (err, item)=>{
 			if(err){
+				//console.log(item);
 				console.log(err);
 				res.send({'error': 'An error has occurred'});
 			}
 			else{
 				res.send(item);
+
 			}
 		});
 	});
