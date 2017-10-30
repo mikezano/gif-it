@@ -42,3 +42,35 @@ References
 6. Also in the cli directory, run `npm install babel-polyfill babel-register typescript`
 7. Create a new project with `au new` or use an existing project. The linked CLI will be used to create the project.
 8. In the project directory, run `npm link aurelia-cli`. The linked CLI will then be used for `au` commands such as `au run`
+
+deploy.json
+
+{
+  "name": "deploy",
+  "description": "Builds the application and deployes to github pages.",
+  "flags": []
+}
+
+var shell = require("shelljs");
+
+function exec(command) {
+  shell.exec("echo ---------------------------------------------------");
+  shell.exec("echo " + command);
+  shell.exec("echo ---------------------------------------------------");
+  shell.exec(command)
+}
+
+deploy.task
+
+function run() {
+  exec("au build --env prod");
+  // exec("cp 404.html build")
+  exec("git checkout -B gh-pages");
+  exec("git add -f dist");
+  exec("git commit -a  -m 'rebuild-website'");
+  exec("git filter-branch -f --prune-empty --subdirectory-filter dist");
+  exec("git push -f origin gh-pages");
+  exec("git checkout -");
+}
+
+export { run as default };
