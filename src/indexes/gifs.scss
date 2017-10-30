@@ -1,4 +1,21 @@
 .gifs{
     display:flex;
     flex-wrap:wrap;
+    justify-content: center;
 }
+
+.loading-message{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .rotate{
+        animation: rotation .2s infinite linear;
+        @keyframes rotation {
+            0%{transform: rotate(0);}
+            100%{transform: rotate(360deg);}
+        }
+    }
+
+}
+

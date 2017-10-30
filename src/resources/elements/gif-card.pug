@@ -1,6 +1,5 @@
 template
-  require(from="./gif-card.css")
+	require(from="./gif-card.scss")
 
-  .gif-card
-    
-    img.gif-card__gif(src.bind='src')
+	.gif-card
+		img.gif-card__gif(src="data:image/gif;base64,${src}")

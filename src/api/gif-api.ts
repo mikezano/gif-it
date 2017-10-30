@@ -4,18 +4,22 @@ import { ApiService } from './api-service';
 @autoinject()
 export class GifApi {
 
-    public root:string= "http://localhost:9000/";
-    constructor(private apiService: ApiService) { }
+	public root:string= "http://localhost:8000/gifs";
+	constructor(private apiService: ApiService) { }
 
-    public getAllGifs(): Promise<string[]> {
-        return this.apiService.get(`${this.root}api/Gif/GetAllGifs`, json => json);
-    }
+	public getAllGifs(): Promise<string[]> {
+		return this.apiService.get(`${this.root}/all`, json => json);
+	}
 
-    public getGifsByCategory(category: string): Promise<string[]> {
-        return this.apiService.get(`${this.root}api/Gif/GetAllGifs/` + category, json => json);
-    }
+	public getGifsByCategory(category: string): Promise<string[]> {
+		return this.apiService.get(`${this.root}/${category}`, json => json);
+	}
 
-    public getRandomGif(): Promise<string> {
-        return this.apiService.get(`${this.root}api/Gif/GetRandomGif/`, json => json);
-    }
+	public getRandomGif(): Promise<string> {
+		return this.apiService.get(`${this.root}/random/`, json => json);
+	}
+
+	public uploadGif(gif): Promise<string> {
+		return this.apiService.post(`${this.root}/upload/`, gif, json => json);
+	}
 }

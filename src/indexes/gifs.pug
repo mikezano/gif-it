@@ -1,13 +1,9 @@
 template
-    require(from="../resources/elements/gif-card")
-    require(from="./gifs.css")
-    .gifs
-        gif-card(src.bind="'http://localhost:8000/success1.gif'")
-        gif-card(src.bind="'http://localhost:8000/success2.gif'")
-        gif-card(src.bind="'http://localhost:8000/success3.gif'")
-        gif-card(src.bind="'http://localhost:8000/success4.gif'")
-        gif-card(src.bind="'http://localhost:8000/success5.gif'")
-        gif-card(src.bind="'http://localhost:8000/success6.gif'")
-        gif-card(src.bind="'http://localhost:8000/success7.gif'")
-        gif-card(src.bind="'http://localhost:8000/success8.gif'")
-        gif-card(src.bind="'http://localhost:8000/success9.gif'")
+	require(from="../resources/elements/gif-card")
+	require(from="./gifs.scss")
+
+	.loading-message(if.bind="gifSrcs.length == 0") 
+		h1 Loading GIFS
+		h1.rotate &hellip;
+	.gifs
+		gif-card(repeat.for="src of gifSrcs" src.bind="src.data")

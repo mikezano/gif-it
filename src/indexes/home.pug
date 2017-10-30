@@ -1,26 +1,18 @@
 template
-	require(from="./home.css")
-	//require(from="../components/modals/gifEmbedDialog.css")
+	require(from="./home.scss")
+	require(from="../resources/elements/letter")
+	require(from="../resources/elements/file-dropper")
+	require(from="../resources/elements/gif-embed-dialog.scss")
 	section.home.au-animate
 
-	form(
-		action="http://localhost:8000/upload"
-		method="post" 
-		encType="multipart/form-data")
-		input(
-			type="file" 
-			name="gif")
-
-		input(type="submit")
+		file-dropper
 
 		.gif-player
 			.current-channel
-				img(if.bind="gif" src.bind="gif")
+				img( src.bind="base64src" if.bind="base64src")
 			img.tv(src="http://prashantsani.com/Misc/codepen/tv.svg" alt="")
-		button.push-button(click.trigger="openDialog()") Embed Gifs Into Your Site
 
-
-
+		button.push-button(click.trigger="openDialog()") Embed Gifs Into Your Site			
 
 	script.
 		(function(){
@@ -43,8 +35,7 @@ template
 		)}();
 		console.log("why");
 
-
-	//img#random-gif(onload='httpGetAsync("http://localhost:5000/api/Gif/GetRandomGif", whatToDo)')
+//img#random-gif(onload='httpGetAsync("http://localhost:5000/api/Gif/GetRandomGif", whatToDo)')
 //http://stackoverflow.com/questions/36517735/script-tag-in-aurelia-view-is-not-executed
 
 

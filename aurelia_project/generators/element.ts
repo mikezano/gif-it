@@ -9,14 +9,12 @@ export default class ElementGenerator {
     return this.ui
       .ensureAnswer(this.options.args[0], 'What would you like to call the custom element?')
       .then(name => {
-        //let fileName = this.project.makeFileName(name);
-        let fileName = name;
+        let fileName = this.project.makeFileName(name);
         let className = this.project.makeClassName(name);
 
         this.project.elements.add(
           ProjectItem.text(`${fileName}.ts`, this.generateJSSource(className)),
-          ProjectItem.text(`${fileName}.pug`, this.generatePugSource(className)),
-          ProjectItem.text(`${fileName}.scss`, this.generateScssSource(className))
+          ProjectItem.text(`${fileName}.html`, this.generateHTMLSource(className))
         );
 
         return this.project.commitChanges()
@@ -24,30 +22,23 @@ export default class ElementGenerator {
       });
   }
 
-  generateScssSource(className){
-    return `.${this.dasherize(className)}{}`;
-  }
-
   generateJSSource(className) {
-return `import {bindable, autoinject} from 'aurelia-framework';
+return `import {bindable} from 'aurelia-framework';
 
-@autoinject()
 export class ${className} {
-  public attached(){}
+  @bindable value;
+
+  valueChanged(newValue, oldValue) {
+
+  }
 }
+
 `
   }
 
-  generatePugSource(className) {
-return `template
-    .${this.dasherize(className)}
-`
+  generateHTMLSource(className) {
+return `<template>
+  <h1>\${value}</h1>
+</template>`
   }
-
- dasherize(text){
-       return text.replace(/[A-Z]/g, function(char, index) {
-      return (index !== 0 ? '-' : '') + char.toLowerCase();
-    });
- }  
 }
-

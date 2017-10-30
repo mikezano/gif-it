@@ -3,7 +3,7 @@ import {Router} from 'aurelia-router';
 
 @autoinject()
 export class NavBar {
-  @bindable
-  public router:Router;
-  public attached(){}
+	@bindable
+	public router:Router;
+	public attached(){}
 }

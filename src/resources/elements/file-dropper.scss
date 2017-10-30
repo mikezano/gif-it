@@ -1,0 +1,63 @@
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error,
+.box__drophere {
+	display: none;
+	pointer-events:none;
+}
+
+.box{
+	display: flex;
+	text-align:center;
+	width:400px;
+	height:70px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease-in;
+	background-color: #777;
+	outline: 2px dashed black;
+	outline-offset: -4px;
+
+	&.is-dragover{
+		background-color: #aaa;
+		outline-offset: -10px;
+		.box__input{display:none;}
+		.box__drophere{display: block;}
+	}
+
+	&.is-uploading{
+		.box__input{display:none;}
+		.box__uploading{display: block;}
+	}
+
+	&.is-done{
+		.box__input{display:none;}
+		.box__success{display: block;}
+	}
+
+	&__file{display: none;}
+	//&__button{display:none;}
+}
+
+.no-js .box__button {
+	display: block;
+}
+
+.rotate{
+	animation: rotation .2s infinite linear;
+	@keyframes rotation {
+		0%{transform: rotate(0);}
+		100%{transform: rotate(360deg);}
+	}
+}
+
+.done{
+	animation: bump 1s infinite cubic-bezier(.07,.91,.17,.99);
+	@keyframes bump {
+		0%{transform: scale(1);}
+		40%{transform: scale(1.5); opacity:1;}
+		100%{transform: scale(1); opacity:0;}
+	}
+}

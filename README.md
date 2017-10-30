@@ -1,26 +1,44 @@
-# gif-it
-Gif files for those special moments :)
-"# gif-it" 
+Getting PUG to work in Webpack
+=
+*In webpack.config.js:
+* Modify AurelaPlugin instantiation to  ```new AureliaPlugin({viewsExtensions: '.pug'})```
+* Add rule: ```{ test: /\.pug$/i, loader: [ 'html-loader', 'pug-html-loader' ] }```
 
-To Run
-======
-* npm run dev (start up server)
-* au run --watch (start up front end)
+*You may need to:```npm install pug-html-loader --save-dev```*
 
-Tech Involved
-=============
+*In main.ts configure() add: 
+```
+    ViewLocator.prototype.convertOriginToViewUrl = function (origin) {
+      let moduleId = origin.moduleId;
+      let id = (moduleId.endsWith('.js') || moduleId.endsWith('.ts')) ? 
+        moduleId.substring(0, moduleId.length - 3) : 
+        moduleId;
+      return id + '.pug';
+    }
+```
 
-* mLab https://mlab.com/
-* Express https://expressjs.com/
-* [Aurelia cli](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli) 
-* Followed the tutorial [here](https://medium.freecodecamp.com/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2) to setup Express + Mongo backend
+Getting SCSS to work in PUG 
+=
+*In webpack.config.js modify the scss rule (*adding .pug*)
+```
+      {
+        test: /\.scss$/,
+        use: ['css-loader', 'sass-loader'],
+        issuer: /\.pug|html?$/i
+      }
+```
 
-Links That Solved Issues
-========================
+References
+* [Add PUG rules to the webpack.config.js file](https://github.com/jods4/aurelia-webpack-build/issues/22)
+* [Add convertOriginToViewUrl to Aurelia bootstrapper](https://github.com/aurelia/skeleton-navigation/issues/396#issuecomment-207823852)
 
-* [Getting aurelia-dialog to work](http://stackoverflow.com/questions/38762135/aurelia-dialog-error-with-the-release-version-and-cli)
+## Make the Aurelia CLI available on your computer
 
-* [How to use Aurelia's Dialog]
-(http://aurelia.io/hub.html#/doc/article/aurelia/dialog/latest/dialog-basics/)
-
-* Use the Chrome extension of Postman vs the client desktop version
+1. Clone the aurelia-cli: `git clone https://github.com/aurelia/cli.git`
+2. Go into the cli directory: `cd cli`
+3. Run `npm install`
+4. Link the cli with: `npm link`
+5. Still in the cli directory, run `npm install git+https://git@github.com/gulpjs/gulp.git#4.0`
+6. Also in the cli directory, run `npm install babel-polyfill babel-register typescript`
+7. Create a new project with `au new` or use an existing project. The linked CLI will be used to create the project.
+8. In the project directory, run `npm link aurelia-cli`. The linked CLI will then be used for `au` commands such as `au run`

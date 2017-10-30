@@ -1,0 +1,24 @@
+template
+	require(from="./file-dropper.scss")
+	form.box(ref="uploader" submit.delegate="submitManually(gifs)" enctype="multipart/form-data")
+		.box__input
+			input.box__file(
+				type="file" 
+				name="gifs" 
+				id="file" 
+				files.bind="gifs"
+				
+				multiple)
+			label(for="file")
+				strong Choose a file
+				span(if.bind="gifs.length == 0")  or drag it here to upload.
+
+			button.box__button(type="submit" if.bind="gifs.length > 0") Upload
+		.box__uploading 
+			i Uploading 
+			.rotate &hellip;
+		.box__success 
+			.done Done!
+		.box__error Error!
+		.box__drophere 
+			strong Drop Here!
