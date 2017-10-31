@@ -28,7 +28,8 @@ module.exports = (app, db)=>{
 	});
 
 	app.post('/notes', (req, res) => {
-		const note = {text: req.body.body, title: req.body.title};
+		// const note = {text: req.body.body, title: req.body.title};
+		const note = {text: "yip", title: "title"};
 		//res.send("hello"); //two of these causes error in response
 		db.collection('notes').insert(note, (err, result) =>{
 			if(err)
