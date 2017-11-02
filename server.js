@@ -1,7 +1,6 @@
 //server.js
 
 const express	= 	require('express');
-console.log("!!!!!")
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = 	require('body-parser');
 const db = 			require('./config/db');
