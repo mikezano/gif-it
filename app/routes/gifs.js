@@ -41,9 +41,13 @@ module.exports = (app, db) =>{
 	app.get(`/${gifs}/random`, (req, res)=>{
 		
 		const details = { $sample: {size: 1} };
+
 		db.collection(gifs).aggregate(details, (err, item)=>{
 			if(err){
-				res.send({'error': 'An error has occurred'});
+				res.send({
+					'error': 'An error has occurred',
+					'details': err
+				});
 			}
 			else{
 				console.log(item);

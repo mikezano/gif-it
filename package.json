@@ -17,6 +17,7 @@
     "bluebird": "^3.4.1",
     "express": "^4.16.2",
     "express-fileupload": "^0.3.0",
+    "font-awesome": "^4.7.0",
     "mongodb": "^2.2.33",
     "requirejs": "^2.3.5"
   },

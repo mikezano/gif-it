@@ -1,6 +1,15 @@
 template
 	require(from="./nav-bar.scss")
 	.nav-bar
-		.nav-bar__logo GIF IT
-		a.nav-bar__item(repeat.for="route of router.navigation" href.bind="route.href")
-			| ${route.title}
+		//.nav-bar__logo 
+			i.fa.fa-bars
+		a.nav-bar__item(href="/#/") 
+			i.fa.fa-home
+			span.nav-bar__item-text Home
+		a.nav-bar__item(href="/#/gifs") 
+			i.fa.fa-picture-o
+			span.nav-bar__item-text Gifs
+
+
+		//- a.nav-bar__item(repeat.for="route of router.navigation" href.bind="route.href")
+		//- 	| ${route.title}

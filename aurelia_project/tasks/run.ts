@@ -8,7 +8,6 @@ import * as gulp from 'gulp';
 import {buildWebpack} from './build';
 
 function runWebpack(done) {
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
   // https://webpack.github.io/docs/webpack-dev-server.html
   let opts = {
     host: 'localhost',
